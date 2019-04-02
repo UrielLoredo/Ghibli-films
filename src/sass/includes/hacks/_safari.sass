@@ -1,0 +1,15 @@
+//- safari 6 - 7
+_::-webkit-full-page-media, _:future, :root
+
+//- safari 9
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+
+//- Safari 10.1+
+@media not all and (min-resolution:.001dpcm)
+
+// iPhone 6
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-device-pixel-ratio: 2)
+
+
+// iPhone 6+
+@media screen and (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-device-pixel-ratio: 3)

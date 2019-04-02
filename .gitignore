@@ -1,0 +1,11 @@
+*.zip
+*.ai
+*.psd
+.sass-cache/
+*.db
+*.sassc
+*.scssc
+.DS_Store
+.sass-cache
+codekit-config.json
+node_modules/*

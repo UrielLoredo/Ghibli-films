@@ -1,0 +1,35 @@
+head( lang="es", xml:lang="es")
+	title #{titulo}
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+	meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+
+	//metatags
+	meta(name="Description", content=descrip)
+	meta(name="Keywords", content=keyword)
+	
+	// fb
+	meta(content='123456789', property='fb:admins')
+	meta(content='12345678910', property='fb:app_id')
+	
+	// apple metatags
+	meta(name='apple-mobile-web-app-capable', content="yes")
+	meta(name='apple-mobile-web-app-status-bar-style', content="black-translucent")
+	
+	// iconos
+	link(rel="shorcut icon", href=urlSitio + "css/img/favicon.ico")
+	link(rel="shorcut icon", href=urlSitio + "css/img/favicon.png")
+	link(rel="apple-touch-icon", href=urlSitio + "css/img/icon-touch.png")
+	link(rel="apple-touch-icon", sizes="72x72", href=urlSitio + "css/img/icon-touch-72.png")
+	link(rel="apple-touch-icon", sizes="114x114", href=urlSitio + "css/img/icon-touch-114.png")
+	link(rel="apple-touch-icon", sizes="144x144", href=urlSitio + "css/img/icon-touch-144.png")
+	
+	// styles
+	//-Import Google Icon Font
+	link(rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons")
+	link(rel="stylesheet", href=urlSitio + "css/styles.css", type="text/css")
+	<!--[if lte IE 9]>
+	script(src=urlSitio + 'js/html5shiv.js')
+	link(rel="stylesheet", href=urlSitio + "css/styles-ie.css", type="text/css")
+	script(src=urlSitio + 'js/console-IE8.js', async)
+	<![endif]-->

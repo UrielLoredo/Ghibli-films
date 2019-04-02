@@ -1,0 +1,95 @@
+//- includes/mixines.pug
+//-Menu Autos
+mixin menu-autos(arreglo)
+	.menu-autos
+		div
+			.regresar Modelos
+			ul
+				each val, index in arreglo
+					-var ind = index +1
+					li
+						a #{val.familia}
+						div
+							.container
+								h6 #{val.titulo}
+								.flex
+									each valu in arreglo[index].lista
+										div
+											a(href="#{urlSitio}#{valu.urlimg}")
+												img(src="#{urlSitio}images/autos/#{valu.img}")
+												img(src="#{urlSitio}images/autos/#{valu.imghover}").hover
+											p #{valu.modelo}
+												cite #{valu.slogan}
+												span Desde 
+													b $#{valu.precio}
+											dl
+												dd
+													a(href="#{valu.urlver}").link VER DETALLE
+												dd
+													a(href="#{urlSitio}#{valu.url}").link CONFIGURA
+
+//-Seleccionar Autos
+mixin seleccionar-autos(arreglo)
+	.configura-modelos
+		div
+			ul
+				each val, index in arreglo
+					-var ind = index +1
+					li
+						a #{val.familia}
+						div
+							.container
+								.flex
+									each valu in arreglo[index].lista
+										div
+											a(href="version.html")
+												.img
+													img(src="#{urlSitio}images/autos/#{valu.img}")
+													img(src="#{urlSitio}images/autos/#{valu.imghover}").hover
+												p #{valu.modelo}
+												span Desde 
+													b $#{valu.precio}
+
+//-Autos
+mixin lista-autos(arreglo)
+	.lista-autos
+		ul
+			each val, index in arreglo
+				-var ind = index +1		
+				li
+					a(href="#{val.url}") #{val.modelo}						
+
+//-Paginador
+mixin paginador(arreglo)
+	.paginador
+		ul.pagination
+			each val, index in arreglo
+				-var ind = index +1
+				li(class="#{val.clase}")
+					a(href="#!") #{val.nombre}
+						i(class="#{val.claseIco}") #{val.nombreIco}
+
+//-Links Mapa de Sitio
+mixin mapa-de-sitio(arreglo)
+	each val, index in arreglo
+		-var ind = index +1
+		div
+			each valu, index1 in arreglo[index].lista
+				dl
+					dt #{valu.titulo}
+					div
+						each value in arreglo[index].lista[index1].subLista
+							dd #{value.text1}
+
+//-Links Footer
+mixin links-footer(arreglo)
+	each val, index in arreglo
+		-var ind = index +1
+		ul
+			each valu, index1 in arreglo[index].lista
+				li
+					p #{valu.titulo}
+					ul
+						each value in arreglo[index].lista[index1].subLista
+							li
+								a(href="#{urlSitio}#{value.url}") #{value.text1}

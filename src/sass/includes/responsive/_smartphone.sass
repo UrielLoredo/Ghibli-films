@@ -1,0 +1,47 @@
+@media only screen and (max-width: 767px)
+	//html
+		//overflow: hidden
+	body
+		height: 100vh
+		overflow: scroll
+	h1
+		font-size: 2.5rem
+		line-height: 3rem
+	h2
+		font-size: 2rem
+		line-height: 2.125rem
+	h3
+		font-size: 1.875rem
+		line-height: 2.5rem
+	h6
+		font-size: 1.5rem
+
+	.container
+		margin: auto
+		max-width: 767px!important
+		padding: 0px 20px
+		width: 100%
+
+	.hamburguesa
+		display: block
+	.flex
+		+flexDir
+
+	.redesSociales
+		display: none
+		position: inherit
+		right: inherit
+		width: auto
+		margin: 1.25rem auto
+		border-radius: 10px
+		> a
+			float: left
+
+	// Header
+	@include Header-smartphone
+
+	// Modulos Home
+	@include home-elementos-smartphone
+
+	// Footer
+	@include Footer-smartphone

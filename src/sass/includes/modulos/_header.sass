@@ -1,0 +1,76 @@
+.header
+	//border-bottom: 10px solid #e44d26
+	width: 100%
+	&.fixed
+		left: 0
+		margin: 0 auto
+		position: fixed
+		right: 0
+		top: 0
+		z-index: 99
+		.main-nav
+			ul
+				li
+					a
+						font-size: 0.85rem
+	&-wrapper
+		background: $HippieGreen
+		color: $White
+	&-menu
+		height: 45px
+	.main-nav
+		display: table
+		float: right
+		height: 100%
+		ul
+			display: table
+			height: 100%
+			width: 100%
+			li
+				display: table
+				float: left
+				height: 100%
+				margin: 0
+				a
+					+fx(all,0.5s)
+					//background: #e44d26
+					color: $White
+					display: table-cell
+					font-size: 1rem
+					font-weight: normal
+					padding: 0 1.5rem
+					position: relative
+					text-decoration: none
+					text-transform: uppercase
+					vertical-align: middle
+					border-bottom: 3px solid $HippieGreen
+					&:hover
+						background-color: $FernGreen
+						border-bottom-color: $White
+						color: $White
+
+@mixin Header-smartphone
+	.header
+		height: auto
+		.container
+			.con 
+				display: block
+				.logo
+					+center(r)
+					margin: 0px
+			nav
+				display: none
+				float: none
+				height: auto
+				width: 100%
+				ul
+					li
+						display: block
+						float: none
+						height: auto
+						margin: 1rem 0px
+						a
+							+bx
+							display: block
+							padding: 1rem 0px
+							text-align: center

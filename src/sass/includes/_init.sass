@@ -1,0 +1,436 @@
+// //Clearfix
+// .cf
+// 	*zoom: 1
+// 	&:after
+// 		clear: both
+// 		content: ""
+// 		display: table
+// // ::-moz-selection
+// // 	background: transparent
+// // ::selection
+// // 	background: transparent
+// //Base
+html
+	-webkit-font-smoothing: antialiased
+	font-family: 'Open Sans', sans-serif
+	font-size: 16px
+	font-weight: 400
+	text-rendering: optimizeLegibility
+	-webkit-text-size-adjust: 100%
+	-moz-text-size-adjust: 100%
+	-ms-text-size-adjust: 100%
+
+html, body
+	position: relative
+	width: 100%
+
+body
+	-webkit-overflow-scrolling: touch
+	background: $White
+	display: block
+	line-height: 1.45
+	margin: auto
+	max-width: 2560px
+	padding: 0px
+	position: relative
+	width: 100%
+	> iframe
+		position: absolute
+	&.hidden
+		overflow: hidden
+
+h1
+	color: $BlueGrey800
+	font-size: 4.5rem
+	font-weight: 400
+	line-height: 5.375rem
+	margin: 6.25rem 0px 2.25rem
+	strong
+		font-weight: 700
+
+h2
+	color: $BlueGrey800
+	font-size: 3.25rem
+	font-weight: 400
+	line-height: 3.875rem
+	margin: 4.5rem 0px 1.625rem
+	strong
+		font-weight: 700
+
+h3
+	color: $BlueGrey800
+	font-size: 2rem
+	font-weight: 400
+	line-height: 3rem
+	margin: 3.5rem 0px 1.25rem
+	strong
+		font-weight: 700
+
+h4
+	color: $BlueGrey800
+	font-size: 1.75rem
+	font-weight: 400
+	line-height: 2.375rem
+	margin: 2.75rem 0px 1rem
+	strong
+		font-weight: 700
+
+h5
+	color: $BlueGrey800
+	font-size: 1.625rem
+	font-weight: 400
+	line-height: 1.9375rem
+	margin: 2.4375rem 0px 0.875rem
+	strong
+		font-weight: 700
+
+h6
+	color: $BlueGrey800
+	font-size: 1.5rem
+	font-weight: 400
+	line-height: 1.75rem
+	margin: 2.25rem 0px 0.8125rem
+	strong
+		font-weight: 700
+
+p
+	color: $BlueGrey800
+	font-size: 1rem
+	font-weight: 400
+	line-height: 1.625rem
+	margin-bottom: 1.25rem
+	strong
+		font-weight: 700
+	span
+		color: $BlueGrey800
+		font-size: 1rem
+		font-weight: 400
+		line-height: 1.625rem
+ul
+	li
+		color: $BlueGrey800
+		font-size: 1rem
+		font-weight: 400
+		line-height: 1.625rem
+
+small
+	font-size: smaller
+
+pre
+	color: $BlueGrey800
+	display: block
+	font-size: 1rem
+	font-weight: 400
+	line-height: 1.1875rem
+	margin-bottom: 1.25rem
+	white-space: pre-line
+
+
+header
+	max-width: 2560px
+	width: 100%
+	&.fixed
+		position: fixed
+		top: 0px
+		z-index: 99
+.main
+	margin: auto
+	max-width: 1920px
+	overflow: hidden
+	position: relative
+	width: 100%
+
+section
+	position: relative
+	max-width: 2560px
+	width: 100%
+
+footer
+	max-width: 2560px
+	width: 100%
+
+sub, sup
+	font-size: 75%
+	line-height: 0
+	position: relative
+	vertical-align: baseline
+sup
+	top: -0.328125rem
+sub
+	bottom: -0.164062rem
+
+.container
+	+bx
+	height: 100%
+	margin: 0 auto
+	overflow: hidden
+	padding: 0px 10px
+	position: relative
+	width: 100%
+	max-width: 1200px
+.left,.alignleft
+	float: left
+.right,.alignright
+	float: right
+.center,.aligncenter
+	display: block
+	margin-left: auto
+	margin-right: auto
+.text-center
+	text-align: center
+.text-left
+	text-align: left
+.text-right
+	text-align: right
+.text-justify
+	text-align: justify
+
+.link
+	color: $Red800
+	display: table
+	font-size: 1rem
+	font-weight: 700
+	margin: 1em auto
+	text-decoration: none
+	position: relative
+	overflow: hidden
+	&:before
+		+fx(all,0.5s)
+		background: $Red800
+		bottom: 0px
+		content: " "
+		display: block
+		height: 2px
+		left: 0px
+		position: absolute
+		width: 0%
+	&:hover
+		&:before
+			width: 100%
+	&.plus
+		padding-right: 1rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+icons('\E145')
+			font-size: 0.75rem
+			height: 0.625rem
+			line-height: normal
+			right: 0px
+			padding-bottom: 2px
+	&.datalle
+		padding-right: 1rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f178')
+			font-size: 0.625rem
+			height: 0.625rem
+			line-height: normal
+			right: 0px
+	&.white
+		color: $White
+		&:before
+			background: $White
+	&.descarga
+		padding-left: 1rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f019')
+			font-size: 0.625rem
+			height: 0.625rem
+			line-height: normal
+			left: 0px
+		&:before
+			left: 1rem
+	&.regresar
+		padding-left: 1.5rem
+		&:before
+			left: 1.5rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f177')
+			font-size: 0.625rem
+			height: 0.625rem
+			line-height: normal
+			left: 0px
+	&.right
+		margin: 1rem 0px
+	&.left
+		float: none
+		margin: 1rem 0px
+
+.boton
+	+bx
+	+fx(all,0.5s)
+	background: $Red800
+	border-radius: 50px
+	border: none
+	clear: both
+	color: $White
+	cursor: pointer
+	display: block
+	font-size: 0.875rem
+	font-weight: 700
+	margin: 1rem auto
+	max-width: 200px
+	min-width: 150px
+	padding: 15px 0px
+	text-align: center
+	text-decoration: none
+	&:hover
+		+shadow
+		background: $Red400
+	&.white
+		background: $White
+		color: $Red800
+	&.secundario
+		border: 1px solid $Red800
+		background: none
+		color: $Red800
+		&:hover
+			+shadow
+			background: $Red400
+			color: $White
+			border: 1px solid $Red400
+		&.white
+			border: 2px solid $White
+			color: $White
+			&:hover
+				background: $White
+				border: 2px solid $White
+				color: $Red400
+	&.disabled
+		background: $Grey200
+		color: $Grey400
+		cursor: default
+		&:hover
+			+shadowr
+	&.right
+		margin: 1rem 0px
+	&.left
+		float: none
+		margin: 1rem 0px
+
+.hamburguesa
+	+center(h)
+	color: $White
+	cursor: pointer
+	display: none
+	font-size: 0.5625rem
+	padding: 0px 1rem
+	right: 0px
+	text-align: center
+	&:before
+		+fx(all,0.5s)
+		+icons('\E5D2')
+		color: $White
+		display: block
+		font-size: 24px
+	&.activo
+		&:before
+			+icons('\E14C')
+			display: block
+.input-field
+	input[type="submit" i]
+		&:focus
+			outline-width: 0
+input
+	+appearance
+	&:focus
+		outline-width: 0
+.flex
+	+flex
+	+flexDir(row)
+	+flexWrap
+.contenedor
+	height: 100%
+	margin: auto
+	max-width: 1500px
+	width: 100%
+.anclas
+	display: block
+	height: 1px
+	overflow: hidden
+	position: absolute
+	top: 0px
+	visibility: hidden
+	width: 1px
+
+.redesSociales
+	background: $Grey50
+	display: table
+	margin-top: 1.25rem
+	overflow: hidden
+	position: fixed
+	right: 0px
+	width: 50px
+	z-index: 9
+	> a
+		background: $Red800
+		border-radius: 50%
+		color: $White
+		display: table
+		height: 40px
+		margin: 0.875rem auto
+		position: relative
+		width: 40px
+		&:before
+			+center(vh)
+			font-size: 26px
+.compartir
+	display: table
+	margin: auto
+	> p
+		color: $Grey100
+		display: table-cell
+		letter-spacing: 0.125rem
+		line-height: 1.1875rem
+		margin-bottom: 0px
+		padding: 0px 1rem
+		vertical-align: middle
+	> a
+		color: $White
+		display: table-cell
+		height: 35px
+		position: relative
+		vertical-align: middle
+		width: 35px
+		&:before
+			+center(vh)
+	.icon-facebook
+		background: #3a579d
+	.icon-google
+		background: #de4931
+	.icon-mail-closed
+		background: #aaaaaa
+	.icon-pinterest
+		background: #c8201f
+	.icon-twitter
+		background: #07a9ea
+input, textarea
+	&::-webkit-input-placeholder
+		text-transform: uppercase
+	/* Firefox 18- */
+	&:-moz-placeholder
+		text-transform: uppercase
+	/* Firefox 19+ */
+	&::-moz-placeholder
+		text-transform: uppercase
+	&:-ms-input-placeholder
+		text-transform: uppercase
+.parallax-container
+	height: 100vh
+
+.btn, .btn-large
+	color: $HippieGreen
