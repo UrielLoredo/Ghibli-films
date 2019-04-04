@@ -1,15 +1,15 @@
 /* Dependencias */
 var gulp    = require('gulp'),
-	server = require('gulp-server-livereload'),
-	pug = require('gulp-pug'),
+	server  = require('gulp-server-livereload'),
+	pug     = require('gulp-pug'),
 	compass = require('gulp-compass'),
-	coffee = require('gulp-coffee'),
+	coffee  = require('gulp-coffee'),
 	gutil   = require('gulp-util'),
 	uglify  = require('gulp-uglify'),
 	watch   = require('gulp-watch'),
 	notify  = require('gulp-notify')
 	concat  = require('gulp-concat');
-	cssmin = require('gulp-cssmin');
+	cssmin  = require('gulp-cssmin');
 
 /* Configuración del 'server' */
 gulp.task('webserver', function(){
@@ -41,7 +41,6 @@ gulp.task('compass', function(){
 	gulp.src('./src/sass/**/*.*')
 	.pipe(compass({
 		config_file: './src/config.rb',
-		css: 'src/css-js',
 		sass: 'src/sass',
 		scss: 'src/scss'
 	}))

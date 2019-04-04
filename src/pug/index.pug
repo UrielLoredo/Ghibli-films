@@ -13,149 +13,48 @@ doctype html
 html(itemscope, itemtype="http://schema.org/WebPage")
 	include includes/head.pug
 	body
+		.wrapper
 
-		include includes/header.pug
+			include includes/header.pug
 
-		main.main
-			.mainSlider
-				.mainSlider-item
-					.main-slider_image
-						img(src='img/banner-hero-img.jpg')
-					.main-slider_content
-						h2 
-							span Boilerplate essential
-						p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						a.waves-effect.waves-light.btn-large Call to action
-				.mainSlider-item
-					.main-slider_image
-						img(src='img/banner-hero-img.jpg')
-					.main-slider_content
-						h2 
-							span Boilerplate essential
-						p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						a.waves-effect.waves-light.btn-large Call to action
-			section.section
-				.container
-					.section-heading
-						h2 Article h1
-					.row.flex-row
-						.col.s12.m5
-							img(src="http://placehold.it/350x150").responsive-img
-						.col.s12.m7
-							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.
-			section.section
-				.container
-					.section-heading
-						h2 Article h1
-					.row.flex-row
-						.col.s12.m4
-							figure.figure
-								a(href="", title="").figure-link
-									img(src="img/", alt="")
-								figcaption.figure-caption
-									a(href="", title="") 
-										h4 Platino
-									p Dentro de los metales más apreciados y codiciados se encuentra el platino, ya que con él se fabrica joyería de gran valor, entre otros artículos.
-						.col.s12.m4
-							figure.figure
-								a(href="", title="").figure-link
-									img(src="img/", alt="")
-								figcaption.figure-caption
-									a(href="", title="") 
-										h4 Platino
-									p Dentro de los metales más apreciados y codiciados se encuentra el platino, ya que con él se fabrica joyería de gran valor, entre otros artículos.
-						.col.s12.m4
-							figure.figure
-								a(href="", title="").figure-link
-									img(src="img/", alt="")
-								figcaption.figure-caption
-									a(href="", title="") 
-										h4 Platino
-									p Dentro de los metales más apreciados y codiciados se encuentra el platino, ya que con él se fabrica joyería de gran valor, entre otros artículos.
-						.col.s12.m4
-							figure.figure
-								a(href="", title="").figure-link
-									img(src="img/", alt="")
-								figcaption.figure-caption
-									a(href="", title="") 
-										h4 Platino
-									p Dentro de los metales más apreciados y codiciados se encuentra el platino, ya que con él se fabrica joyería de gran valor, entre otros artículos.
-						.col.s12.m4
-							figure.figure
-								a(href="", title="").figure-link
-									img(src="img/", alt="")
-								figcaption.figure-caption
-									a(href="", title="") 
-										h4 Platino
-									p Dentro de los metales más apreciados y codiciados se encuentra el platino, ya que con él se fabrica joyería de gran valor, entre otros artículos.
-						.col.s12.m4
-							figure.figure
-								a(href="", title="").figure-link
-									img(src="img/", alt="")
-								figcaption.figure-caption
-									a(href="", title="") 
-										h4 Platino
-									p Dentro de los metales más apreciados y codiciados se encuentra el platino, ya que con él se fabrica joyería de gran valor, entre otros artículos.
-			.ribbon.row.flex-row
-				.col.s12
+			main.main
+				section.section
 					.container
-						.ribbon-title
-							h3 Deseas vender algo
-							a(href="", title="") Vender
-			section.section.home-location
-				.row-flex-row
-					.col.s12
-						.section-heading
-							h3 UBICACIÓN
-					.col.s12
-						p Casa Polanco, Ejército Nacional #418 Entrada E (por la calle de Hegel) Polanco, Del. Miguel Hidalgo, C.P. 11510, CDMX
-						p Lunes a Viernes de 10 am a 5 pm
-						p Sábado de 10 am a 2 pm
-						p Contamos con estacionamiento a pie del local
-					.col.s12
-						.home-location-map
-
-			section.section.home-contact
-				.row-flex-row
-					.col.s12
-						.section-heading
-							h3 CONTÁCTANOS
-					.col.s12
-						p Si quieres vender o necesitas más información, ponte en contacto con nosotros
-						ul.home-contact_box
-							li Llama ahora: 5203-6187 /5545-7551
-							li WhatsApp: (+52 1) 55-3401-9256
-					.col.s12
-						.form-wrapper
-							form(action="").form
-								.row.flex-row
-									.input-field.col.s6
-										input#first_name(type='text')
-										label(for='first_name') First Name
-									.input-field.col.s6
-										input#first_name(type='text')
-										label(for='first_name') First Name
-									.input-field.col.s6
-										input#first_name(type='text')
-										label(for='first_name') First Name
-									.input-field.col.s6
-										input#first_name(type='text')
-										label(for='first_name') First Name
-									.file-field.input-field
-										.btn
-											span File
-											input(type='file')
-										.file-path-wrapper
-											input.file-path(type='text')
-									.col.s12
-										p Al enviarnos un formulario aceptas nuestro 
-											a(href="", title="") Aviso de Privacidad
-									.col.s12
-										button.btn.waves-effect.waves-light(type='submit', name='action')
-											| Enviar
-											i.material-icons.right send
+						#MoviesCarousel
+							article.article.movie
+								figure.figure.movie--content
+									img(src="https://source.unsplash.com/800x600", alt="Title")
+									figcaption.figcaption
+										h2 Title
+										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
+										p
+											small Director: Gorō Miyazaki
+							article.article.movie
+								figure.figure.movie--content
+									img(src="https://source.unsplash.com/800x600", alt="Title")
+									figcaption.figcaption
+										h2 Title
+										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
+										p
+											small Director: Gorō Miyazaki
+							article.article.movie
+								figure.figure.movie--content
+									img(src="https://source.unsplash.com/800x600", alt="Title")
+									figcaption.figcaption
+										h2 Title
+										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
+										p
+											small Director: Gorō Miyazaki
+							article.article.movie
+								figure.figure.movie--content
+									img(src="https://source.unsplash.com/800x600", alt="Title")
+									figcaption.figcaption
+										h2 Title
+										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
+										p
+											small Director: Gorō Miyazaki
+				
 
 
-
-					
-		include includes/footer.pug
+						
+			include includes/footer.pug

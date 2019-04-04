@@ -1,8 +1,7 @@
-//variables
-var url = 'http://'+document.location.hostname+'/';
-var core = null;
+var url = 'http://'+document.location.hostname+'/'
+var core = null
 
-if($(window).width() <= 767){
+if(window.outerWidth <= 767){
 	core = true
 }else{
 	core = false
@@ -10,99 +9,72 @@ if($(window).width() <= 767){
 
 init = function(){
 
-	anclasArray = [];
-
-	medidas = function(){
-		altura = $(window).height();
-		anchura = $(window).width();
-		alturaScroll = $(window).scrollTop();
+	screenSize = function(){
+		width = window.outerWidth
+		height = window.outerHeight
 		return;
 	}
 
 	setSize = function(){
-		medidas();
-		if(anchura <= 767){
+		screenSize();
+		if(width <= 767){
 			if(core=== true){
 				core = false
-				moverElementos();
-				destructMenuDesctop();
-				menumobile();
-				fixedmenu();
+				
 			}
 		}
-		else if(anchura >= 768){
+		else if(width >= 768){
 			if(core=== false){
 				core = true
-				resetElementos();
-				destructMenuMobile();
-				menudesktop();
-				fixedmenu();
+				
 			}
 		}
 	}
 
-	moverElementos = function(){
-
-	}
-
-	resetElementos = function(){
-		$('.hamburguesa').removeClass('activo');
-		$('.header nav').removeAttr( 'style' );
-	}
-
-	menudesktop = function(){
-
-	}
-
-	menumobile = function(){
-		$('.hamburguesa').on('click', function(){
-			$(this).toggleClass('activo');
-			$('.header nav').slideToggle( 'slow' );
-		});
-	}
-
-	destructMenuMobile = function(){
-		$('.hamburguesa').off('click');
-	}
-
-	destructMenuDesctop = function(){
-
-	}
-
-	fixedmenu = function(){
-		if($('header').hasClass('fixed')){
-			var headerH = $('header').height();
-			$('.wrapper').css("margin-top", headerH);
+	// Code to initialize on document ready
+	var slider = tns({
+		center: true,
+		container: '#MoviesCarousel',
+		prevButton: false,
+		nextButton: false,
+		nav: false,
+		edgePadding: 10,
+		controls: false,
+		items: 2,
+		loop: false,
+		mouseDrag: true,
+		startIndex: 2,
+		gutter: 10,
+		responsive: {
+		  640: {
+			edgePadding: 20,
+			gutter: 20,
+			items: 1
+		  },
+		  700: {
+			gutter: 30
+		  },
+		  900: {
+			items: 1
+		  }
 		}
-	}
+	  });
 
-	$('.mainSlider').slick();
 
-	inicio = function(){
-		setSize();
-	}
+	// inicio = function(){
+	// 	setSize()
+	// }
 
-	$(window).resize(function(){
-		setSize();
-	});
+	// window.addEventListener('resize', function(){
+	// 	setSize()
+	//  })
 
-	inicio();
+
+	// inicio()
 };
 
-$( document ).ready( init );
-
-$(window).on('load',function(){
-
-	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
-	}
-
-	else{
-		if(! /iPad/i.test(navigator.userAgent) ) {
-
-		}
-		else{
-
-		}
-	}
-})
+(function() {
+	// initialization code
+	init()
+ 
+ })();
