@@ -21,13 +21,13 @@ init = function(){
 		if(width <= 767){
 			if(core=== true){
 				core = false
-				
+
 			}
 		}
 		else if(width >= 768){
 			if(core=== false){
 				core = true
-				
+
 			}
 		}
 	}
@@ -46,9 +46,9 @@ init = function(){
 		if (request.status >= 200 && request.status < 400) {
 			data.forEach(function (movie) {
         dbTitles.push(movie.title)
-        
+
 				// Create movie list DOM
-        
+
         var movieWrap = document.createElement('article')
 				var movieContent = document.createElement('div')
 				var movieHeading = document.createElement('h2')
@@ -61,23 +61,24 @@ init = function(){
 
 				movieWrap.setAttribute('class', 'movie')
 				movieWrap.setAttribute('id', movie.title.replace(/[^A-Z0-9]+/ig, '')	)
-				movieContent.setAttribute('class', 'movie--content')	
+				movieContent.setAttribute('class', 'movie--content')
 				movieHeading.textContent = movie.title
-				movieDesc.setAttribute('class', 'movie--desc')	
+				movieDesc.setAttribute('class', 'movie--desc')
 				movie.description = movie.description.substring(0, 300)
         descTxt.textContent = ''.concat(movie.description, '...')
-        descTag.setAttribute('class', 'movie--desc-tag')	
+        descTag.setAttribute('class', 'movie--desc-tag')
         descTag.textContent = movie.director
 				moviePoster.setAttribute('class', 'movie--figure')
 				movieThumbnail.setAttribute('class', 'movie--thumbnail')
+				// Request random images form Unsplash API (inly for test)
 				movieImg.setAttribute('src', 'https://source.unsplash.com/800x600')
-				
+
 				moviesContainer.appendChild(movieWrap)
 				movieWrap.appendChild(movieContent)
 				movieWrap.appendChild(moviePoster)
         moviePoster.appendChild(movieThumbnail)
 
-        // Poster container support 
+        // Poster container support
 				  //- movieThumbnail.appendChild(movieImg);
 				movieContent.appendChild(movieHeading,movieDesc)
         movieContent.appendChild(movieDesc)
@@ -94,11 +95,23 @@ init = function(){
 					if(!isActive){
 						var headerH = document.getElementsByClassName('header')[0].clientHeight
 						var getId = this.getAttribute('id')
-            var targetElement = document.getElementById(getId)						
-						Velocity(targetElement, 'scroll', { duration: 300, offset: 0,complete: function(elements) { 
-							elements[0].classList.add('current')
-						 } });
-					
+						var targetElement = document.getElementById(getId)
+
+						var body = document.body, html = document.documentElement
+						var topPositon = targetElement.offsetTop
+						var documentHeight = Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight )
+						var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+            // Fix scroll top for last items
+						if( (documentHeight - topPositon) < windowHeight ){
+							Velocity(targetElement, 'scroll', { duration: 250, offset: headerH * -1, begin: function(elements) {
+								elements[0].classList.add('current')
+							 } })
+						}else{
+							Velocity(targetElement, 'scroll', { duration: 250, offset: headerH * -1, complete: function(elements) {
+								elements[0].classList.add('current')
+							 } })
+						}
 					}else{
 						this.classList.remove('current')
 					}
@@ -138,7 +151,7 @@ init = function(){
 			var headerH = document.getElementsByClassName('header')[0].clientHeight
 			var goToMovie = document.getElementById(term.replace(/[^A-Z0-9]+/ig, ''))
 			Velocity(goToMovie, 'scroll', { duration: 400, offset: (headerH * -1) })
-			setTimeout(function(){ 
+			setTimeout(function(){
 				var isActive = goToMovie.classList.contains('current')
 				if(!isActive){
 					goToMovie.classList.add('current')
@@ -148,7 +161,7 @@ init = function(){
 			 }, 800)
 		}
   })
-  
+
 	// Listerner functions on resize
 	window.addEventListener('resize', function(){
 	  setSize()
@@ -164,5 +177,5 @@ init = function(){
     getBody.classList.add('loader-done')
     Velocity(getLoader, 'fadeOut', { duration: 250 })
   }, 2000)
-  
+
  })()
