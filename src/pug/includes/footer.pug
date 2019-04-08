@@ -1,6 +1,10 @@
 footer.footer
 	.container
-		.row.flex-row
-			.footer-content.col.s12
-			
+		.footer--wrap
+			.searchBox
+				.searchBox--form-content
+					input(id="SearchField", name="searchfield", placeholder="Buscar...", type="text").searchBox--form-field
+				.searchBox--results(id="SearchBoxResults", onkeyup="getValue(this.value)")
+
+	//script(src="https://www.google.com/jsapi")
 	script(src=urlSitio + "js/core.js")

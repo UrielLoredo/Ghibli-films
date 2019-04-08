@@ -1,6 +1,6 @@
 - var location = "home";
 - var subLoc = " ";
-- var titulo = "casacoyoacancompra";
+- var titulo = "Ghibli films";
 - var descrip = " ";
 - var keyword = " ";
 - var breadcrumb = "none";
@@ -14,47 +14,13 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 	include includes/head.pug
 	body
 		.wrapper
-
+			.loader
+				.loader--wrap
 			include includes/header.pug
 
 			main.main
-				section.section
+				section.section.moviesPage
 					.container
-						#MoviesCarousel
-							article.article.movie
-								figure.figure.movie--content
-									img(src="https://source.unsplash.com/800x600", alt="Title")
-									figcaption.figcaption
-										h2 Title
-										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
-										p
-											small Director: Gorō Miyazaki
-							article.article.movie
-								figure.figure.movie--content
-									img(src="https://source.unsplash.com/800x600", alt="Title")
-									figcaption.figcaption
-										h2 Title
-										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
-										p
-											small Director: Gorō Miyazaki
-							article.article.movie
-								figure.figure.movie--content
-									img(src="https://source.unsplash.com/800x600", alt="Title")
-									figcaption.figcaption
-										h2 Title
-										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
-										p
-											small Director: Gorō Miyazaki
-							article.article.movie
-								figure.figure.movie--content
-									img(src="https://source.unsplash.com/800x600", alt="Title")
-									figcaption.figcaption
-										h2 Title
-										p The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.
-										p
-											small Director: Gorō Miyazaki
-				
-
-
-						
+						#MoviesCarousel.moviesPage--wrap
+							
 			include includes/footer.pug

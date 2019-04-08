@@ -1,31 +1,16 @@
-footer
-	.footer
-		background: transparent
-		//border-top: 10px solid #e44d26
-		width: 100%
-		.menu-legales
-			height: 86px
-			overflow: hidden
-			width: 100%
-			nav
-				display: table
-				float: left
-				height: 100%
-				overflow: hidden
-				ul
-					display: table-row
-					margin: 0px
-					padding: 0px
-					li
-						display: table-cell
-						margin: 0px
-						padding-right: 1.25rem
-						vertical-align: middle
-						a
-							color: $White
-							font-size: 0.75rem
-							font-weight: 400
-							text-decoration: none
+.footer
+	background: $Black
+	position: fixed
+	bottom: 0
+	left: 0
+	margin: 0 auto
+	width: 100%
+	z-index: 99
+	&--wrap
+		+flex
+		+alignItem(center)
+		+justifyCont(space-around)
+		height: 2.625rem
 
 @mixin Footer-smartphone
 	footer

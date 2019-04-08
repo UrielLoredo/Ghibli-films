@@ -1,0 +1,35 @@
+.autocomplete-suggestions
+    background: rgba(0,0,0,0.9)
+    border-top: 0
+    bottom: 2.625rem !important
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.1)
+    box-sizing: border-box
+    cursor: default
+    display: none
+    left: 0 !important
+    max-height: 254px
+    max-height: 50vh
+    min-width: 100vw
+    overflow: hidden
+    overflow-y: auto
+    position: fixed
+    text-align: left
+    width: 100% !important
+    z-index: 9999
+
+.autocomplete-suggestion
+    border-bottom: 1px solid rgba(255,255,255,0.25)
+    color: $White
+    font-size: 1rem
+    line-height: 1.5rem
+    margin: 0 auto
+    overflow: hidden
+    padding: 0.6rem
+    position: relative
+    text-overflow: ellipsis
+    white-space: nowrap
+    width: 90%
+    &.selected
+        background: rgba(255,255,255,0.25)
+    &:last-child
+        border-bottom: none

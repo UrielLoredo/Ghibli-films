@@ -1,5 +1,20 @@
 .header
-	
+	background-color: $Black
+	position: fixed
+	top: 0
+	left: 0
+	margin: 0 auto
+	width: 100%
+	z-index: 99
+	&--wrap
+		+flex
+		+alignItem(center)
+		+justifyCont(center)
+		height: 2.625rem
+	h1
+		color: $White
+		font-size: 1.125rem
+		margin-bottom: 0
 @mixin Header-smartphone
 	.header
 		height: auto

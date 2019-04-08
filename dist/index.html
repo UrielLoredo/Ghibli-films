@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage">
   <head lang="es" xml:lang="es">
-    <title>casacoyoacancompra</title>
+    <title>Ghibli films</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -20,6 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="css/img/icon-touch-144.png">
     <!-- styles-->
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600">
     <link rel="stylesheet" href="css/styles.css" type="text/css"><!--[if lte IE 9]>
     <script src="js/html5shiv.js"></script>
     <link rel="stylesheet" href="css/styles-ie.css" type="text/css">
@@ -27,63 +28,35 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="loader">
+        <div class="loader--wrap"></div>
+      </div>
       <header class="header">
         <div class="container">
           <div class="header--wrap">
-            <h1>Ghibli App</h1>
+            <h1>Ghibli Films</h1>
           </div>
         </div>
       </header>
       <main class="main">
-        <section class="section">
+        <section class="section moviesPage">
           <div class="container">
-            <div id="MoviesCarousel">
-              <article class="article movie">
-                <figure class="figure movie--content"><img src="https://source.unsplash.com/800x600" alt="Title">
-                  <figcaption class="figcaption">
-                    <h2>Title</h2>
-                    <p>The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.</p>
-                    <p><small>Director: Gorō Miyazaki</small></p>
-                  </figcaption>
-                </figure>
-              </article>
-              <article class="article movie">
-                <figure class="figure movie--content"><img src="https://source.unsplash.com/800x600" alt="Title">
-                  <figcaption class="figcaption">
-                    <h2>Title</h2>
-                    <p>The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.</p>
-                    <p><small>Director: Gorō Miyazaki</small></p>
-                  </figcaption>
-                </figure>
-              </article>
-              <article class="article movie">
-                <figure class="figure movie--content"><img src="https://source.unsplash.com/800x600" alt="Title">
-                  <figcaption class="figcaption">
-                    <h2>Title</h2>
-                    <p>The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.</p>
-                    <p><small>Director: Gorō Miyazaki</small></p>
-                  </figcaption>
-                </figure>
-              </article>
-              <article class="article movie">
-                <figure class="figure movie--content"><img src="https://source.unsplash.com/800x600" alt="Title">
-                  <figcaption class="figcaption">
-                    <h2>Title</h2>
-                    <p>The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea.</p>
-                    <p><small>Director: Gorō Miyazaki</small></p>
-                  </figcaption>
-                </figure>
-              </article>
-            </div>
+            <div class="moviesPage--wrap" id="MoviesCarousel"></div>
           </div>
         </section>
       </main>
       <footer class="footer">
         <div class="container">
-          <div class="row flex-row">
-            <div class="footer-content col s12"></div>
+          <div class="footer--wrap">
+            <div class="searchBox">
+              <div class="searchBox--form-content">
+                <input class="searchBox--form-field" id="SearchField" name="searchfield" placeholder="Buscar..." type="text">
+              </div>
+              <div class="searchBox--results" id="SearchBoxResults" onkeyup="getValue(this.value)"></div>
+            </div>
           </div>
         </div>
+        <!--script(src="https://www.google.com/jsapi")-->
         <script src="js/core.js"></script>
       </footer>
     </div>
