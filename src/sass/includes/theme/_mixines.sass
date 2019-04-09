@@ -1,21 +1,9 @@
-//- Mixines
 =bx($value: border-box)
 	-moz-box-sizing: $value
 	-webkit-box-sizing: $value
 	box-sizing: $value
 
-// =fonIco($value)
-// 	-moz-osx-font-smoothing: grayscale
-// 	-webkit-font-smoothing: antialiased
-// 	content: $value
-// 	font-family: 'icomoon'
-// 	font-style: normal
-// 	font-variant: normal
-// 	font-weight: normal
-// 	line-height: 1
-// 	speak: none
-// 	text-transform: none
-
+// Material icons
 =icons($value)
 	-moz-osx-font-smoothing: grayscale
 	-webkit-font-smoothing: antialiased
@@ -33,10 +21,12 @@
 	white-space: nowrap
 	word-wrap: normal
 
+// Object-Fit images 
 =object($dir: cover)
 	-o-object-fit: $dir
 	object-fit: $dir
 
+//CSS3 Filter
 =filter($grayscale: 1, $opacity: 100%, $brightness: 100%)
 	-moz-filter: grayscale($grayscale) opacity($opacity) brightness($brightness)
 	-ms-filter: grayscale($grayscale) opacity($opacity) brightness($brightness)
@@ -44,11 +34,13 @@
 	-webkit-filter: grayscale($grayscale) opacity($opacity) brightness($brightness)
 	filter: grayscale($grayscale) opacity($opacity) brightness($brightness)
 
+// Default Cross Browser appearance 
 =appearance
 	-webkit-appearance: none
 	-moz-appearance: none
 	appearance: none
 
+// Center elements x || y || xy
 =center($value: h)
 	position: absolute
 	@if $value == h
@@ -79,32 +71,35 @@
 		top: inherit
 		left:  inherit
 
-
-
+// Transform shortcode
 =transForm($value1)
 	-webkit-transform: $value1
 	-moz-transform: $value1
 	-ms-transform: $value1
 	transform: $value1
 
+// Translate shortcode
 =translate($value1,$value2 )
 	-webkit-transform: translate($value1, $value2)
 	-moz-transform: translate($value1, $value2)
 	-ms-transform: translate($value1, $value2)
 	transform: translate($value1, $value2)
 
+// Scale shortcode
 =scale($value1,$value2 )
 	-webkit-transform: scale($value1, $value2)
 	-moz-transform: scale($value1, $value2)
 	-ms-transform: scale($value1, $value2)
 	transform: scale($value1, $value2)
 
+// Transform remove shortcode
 =transformr
 	-webkit-transform: inherit
 	-moz-transform: inherit
 	-ms-transform: inherit
 	transform: inherit
 
+// Background gradient shortcode
 =gradient($deg, $color_A, $color_B)
 	background: $color_A
 	background: -moz-linear-gradient($deg, $color_A 50%, $color_B 50%)
@@ -122,17 +117,21 @@
 	@if $deg >=271 and $deg <=360
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_B}', endColorstr='#{$color_A}', GradientType=1 )
 
+// Transition css3 shortcode
 =fx($elem, $time: 1s)
 	-webkit-transition: $elem $time
 	-moz-transition: $elem $time
 	-ms-transition: $elem $time
 	transition: $elem $time
+
+// Remove css3 transition
 =fxr
 	-webkit-transition: inherit
 	-moz-transition: inherit
 	-ms-transition: inherit
 	transition: inherit
 
+// Box shadow shortcode
 =shadow($s1: 0px, $s2: 5px, $s3: 11px, $s4: 0px, $alpha: rgba(0,0,0,0.18), $s12: 0px, $s22: 4px, $s32: 15px, $s42: 0px, $alpha2: rgba(0,0,0,0.15))
 	-webkit-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
 	-moz-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
@@ -140,6 +139,7 @@
 	-ms-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
 	box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
 
+// Remove BOx shadow shortcode
 =shadowr
 	-webkit-box-shadow: none
 	-moz-box-shadow: none
@@ -147,20 +147,21 @@
 	-ms-box-shadow: none
 	box-shadow: none
 
+// Font Awesome lib shortcode
 =fawesome($value)
 	content: $value
 	font-family: "FontAwesome"
 
-=iconBg($img: icon-menu, $ancho: 40px, $alto: 40px)
+// Backgorund image as icon
+=iconBg($img: icon-menu, $w: 40px, $h: 40px)
 	content: " "
 	display: inline-block
 	background: url(img/#{$img}.png) no-repeat
 	background-position: 0 0
-	width: $ancho
-	height: $alto
+	width: $w
+	height: $h
 
-
-//- Bloque Experimental Flex
+// Flex
 =flex
 	display: -webkit-box
 	display: -moz-box
@@ -215,7 +216,6 @@
 	align-self: $dir
 	-webkit-align-self: $dir
 
-// Container style
 =flexCenter($value: v)
 	+flex()
 	+flexWrap(wrap)

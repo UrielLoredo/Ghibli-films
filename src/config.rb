@@ -1,6 +1,4 @@
-# Require any additional compass plugins here.
-
-# Set this to the root of your project when deployed:
+# Set this to the root of your project when gulp init deployed:
 http_path = "/"
 css_dir = "../dist/css"
 sass_dir = "sass"
@@ -13,11 +11,9 @@ fonts_dir = "../dist/css/fonts"
 #output_style = :compressed
 # or :nested or :compact or :compressed
 Encoding.default_external = 'UTF-8'
-output_style = :compact
-output_style = (environment == :production) ? :compressed : :expanded
-
 #environment = :production
-environment = :production
+environment = :develop
+output_style = (environment == :production) ? :compressed : :expanded
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true

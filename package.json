@@ -1,12 +1,12 @@
 {
   "name": "boilerplate",
-  "version": "1.0.0",
-  "description": "Sitio de boilerplate",
+  "version": "2.0.0",
+  "description": "Base",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Oscar Martinez",
+  "author": "Uriel Loredo",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
