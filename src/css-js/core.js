@@ -65,7 +65,7 @@ init = function(){
 				movieHeading.textContent = movie.title
 				movieDesc.setAttribute('class', 'movie--desc')	
 				movie.description = movie.description.substring(0, 300)
-        descTxt.textContent = ''.concat(movie.description, '...')
+        descTxt.textContent = movie.description
         descTag.setAttribute('class', 'movie--desc-tag')	
         descTag.textContent = movie.director
 				moviePoster.setAttribute('class', 'movie--figure')
@@ -105,9 +105,7 @@ init = function(){
 				})
 			})
 		} else {
-			var errorMessage = document.createElement('marquee')
-			errorMessage.textContent = "Gah, it's not working!"
-			app.appendChild(errorMessage)
+			console.log( 'Error' )
 		}
 	};
 
@@ -123,8 +121,8 @@ init = function(){
 		minChars: 1,
 		renderItem: function (item, search){
 			search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
-			var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi")
-			return '<div class="autocomplete-suggestion" data-val="' + item + '">' + item.replace(re, "<strong>$1</strong>") + '</div>'
+			var reExp = new RegExp("(" + search.split(' ').join('|') + ")", "gi")
+			return '<div class="autocomplete-suggestion" data-val="' + item + '">' + item.replace(reExp, "<strong>$1</strong>") + '</div>'
 		},
 		source: function(term, suggest){
 				term = term.toLowerCase()
