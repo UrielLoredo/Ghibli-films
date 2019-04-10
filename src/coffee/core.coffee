@@ -23,8 +23,10 @@ init = ->
         core = true
     return
 
-  moviesContainer = document.getElementById('MoviesCarousel')
+  moviesContainer = document.getElementById('MoviesList')
+  # Movie titles Array
   dbTitles = []
+
   cleanCurrentClass = ->
     movieList = document.getElementsByClassName('current')
     len = movieList.length

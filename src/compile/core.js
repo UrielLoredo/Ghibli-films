@@ -27,7 +27,7 @@ init = function() {
       }
     }
   };
-  moviesContainer = document.getElementById('MoviesCarousel');
+  moviesContainer = document.getElementById('MoviesList');
   dbTitles = [];
   cleanCurrentClass = function() {
     var item, j, len, movieList, ref;
