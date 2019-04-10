@@ -91,3 +91,4 @@ Verify the deployment by navigating to your server address in your browser.
 
 ### Screenshot
   ![alt text](https://raw.githubusercontent.com/UrielLoredo/Ghibli-films/master/screenshot.PNG)
+  ![alt text](https://raw.githubusercontent.com/UrielLoredo/Ghibli-films/master/screenshot-detail.PNG)
