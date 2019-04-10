@@ -1,16 +1,22 @@
 # Ghibli Films
 
-List of movies from ghibli studios, from their official api
+List of films from Ghibli Studios
 
 ## Tech/framework used
 ### Preprocessors
   - CoffeeScript
   - Sass
   - Pug
+### Compiled
+  - JavaScript ES5
+  - CSS
+  - HTML5
 ### Environment
   - Node JS 8.11.1
   - Gulp
   - Compass
+### API
+  - Studio Ghibli API https://ghibliapi.herokuapp.com/films
 ### Libs
   - autoComplete JS
 ## Installation
@@ -72,4 +78,6 @@ $ npm install
     gulpfile.js
     package.json
     screenshot.png
-        
+
+### Screenshot
+  ![alt text](https://github.com/UrielLoredo/Ghibli-films/screenshot.png)
