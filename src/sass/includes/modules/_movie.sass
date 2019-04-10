@@ -22,8 +22,8 @@
       height: 100vh
     .movie--desc
       display: block
-  // Select the initial childrens ( "&:nth-of-type(1)" ), then start the iteration every 3 elements ("&:nth-child(n+4):nth-child(3n+1)")
-  &:nth-of-type(1), &:nth-child(n+4):nth-child(3n+0)
+  // Select the initial childrens ( "&:nth-of-type(n+1)" ), then start the iteration every 3 elements (":nth-of-type(3n+1)")
+  &:nth-of-type(n+1):nth-child(3n+1)
     .movie--thumbnail
       &::before
         background: rgb(16,137,158)
@@ -37,7 +37,7 @@
       background: -webkit-linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
       background: linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10899e', endColorstr='#1bcee2',GradientType=1 )
-  &:nth-of-type(2), &:nth-of-type(n+5):nth-of-type(3n+0)
+  &:nth-of-type(n+2):nth-child(3n)
     .movie--thumbnail
       &::before
         background: -moz-linear-gradient(45deg, rgba(255,95,143,0.85) 0%, rgba(232,146,91,0.85) 100%)
@@ -49,7 +49,7 @@
       background: -webkit-linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
       background: linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ff5f8f', endColorstr='#d9e8925b',GradientType=1 )
-  &:nth-of-type(3), &:nth-child(n+6):nth-child(3n+0)
+  &:nth-of-type(n+1)
     .movie--thumbnail
       &::before
         background: -moz-linear-gradient(45deg, rgba(103,149,189,0.85) 0%, rgba(103,148,189,0.85) 1%, rgba(108,88,212,0.85) 100%)

@@ -9,7 +9,7 @@ if (window.outerWidth <= 767) {
 }
 
 init = function() {
-  var dbTitles, moviesContainer, request, screenSize, searchBoxResults, setSize;
+  var cleanCurrentClass, dbTitles, moviesContainer, request, screenSize, searchBoxResults, setSize;
   screenSize = function() {
     var height, width;
     width = window.outerWidth;
@@ -29,6 +29,14 @@ init = function() {
   };
   moviesContainer = document.getElementById('MoviesCarousel');
   dbTitles = [];
+  cleanCurrentClass = function() {
+    var item, j, len, movieList, ref;
+    movieList = document.getElementsByClassName('current');
+    len = movieList.length;
+    for (item = j = 0, ref = len; 0 <= ref ? j < ref : j > ref; item = 0 <= ref ? ++j : --j) {
+      movieList[item].classList.remove('current');
+    }
+  };
   request = new XMLHttpRequest;
   request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
   request.onload = function() {
@@ -68,15 +76,9 @@ init = function() {
         movieDesc.appendChild(descTxt);
         movieDesc.appendChild(descTag);
         movieWrap.addEventListener('click', function() {
-          var body, documentHeight, getId, headerH, html, isActive, item, len, movieList, targetElement, topPositon, windowHeight;
+          var body, documentHeight, getId, headerH, html, isActive, targetElement, topPositon, windowHeight;
           isActive = this.classList.contains('current');
-          movieList = document.getElementsByClassName('current');
-          item = 1;
-          len = movieList.length;
-          while (item < len) {
-            movieList[item].classList.remove('current');
-            item++;
-          }
+          cleanCurrentClass();
           if (!isActive) {
             headerH = document.getElementsByClassName('header')[0].clientHeight;
             getId = this.getAttribute('id');
@@ -143,6 +145,7 @@ init = function() {
       var goToMovie, headerH;
       headerH = document.getElementsByClassName('header')[0].clientHeight;
       goToMovie = document.getElementById(term.replace(/[^A-Z0-9]+/ig, ''));
+      cleanCurrentClass();
       Velocity(goToMovie, 'scroll', {
         duration: 400,
         offset: headerH * -1

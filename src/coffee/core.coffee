@@ -25,6 +25,12 @@ init = ->
 
   moviesContainer = document.getElementById('MoviesCarousel')
   dbTitles = []
+  cleanCurrentClass = ->
+    movieList = document.getElementsByClassName('current')
+    len = movieList.length
+    for item in [0...len]
+      movieList[item].classList.remove 'current'
+    return
 
   #Ghibli Api request
   request = new XMLHttpRequest
@@ -72,12 +78,7 @@ init = ->
         # Init animation on click
         movieWrap.addEventListener 'click', ->
           isActive = @classList.contains('current')
-          movieList = document.getElementsByClassName('current')
-          item = 1
-          len = movieList.length
-          while item < len
-            movieList[item].classList.remove 'current'
-            item++
+          cleanCurrentClass()
           if !isActive
             headerH = document.getElementsByClassName('header')[0].clientHeight
             getId = @getAttribute('id')
@@ -138,6 +139,7 @@ init = ->
     onSelect: (event, term, item) ->
       headerH = document.getElementsByClassName('header')[0].clientHeight
       goToMovie = document.getElementById(term.replace(/[^A-Z0-9]+/ig, ''))
+      cleanCurrentClass()
       Velocity goToMovie, 'scroll',
         duration: 400
         offset: headerH * -1
