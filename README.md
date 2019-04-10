@@ -1,6 +1,6 @@
 # Ghibli Films
 
-List of films from Ghibli Studios
+List of films consuming Ghibli Studios API
 
 ## Tech/framework used
 ### Preprocessors
