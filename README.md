@@ -25,6 +25,11 @@ List of films consuming Ghibli Studios API
   ```sh
 $ npm -g nodefront
 ```
+#### Jade
+  ```sh
+$ npm install jade --global
+```
+
 #### Pug
   ```sh
 $ npm install pug
