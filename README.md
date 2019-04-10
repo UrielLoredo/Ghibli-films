@@ -56,7 +56,7 @@ $ npm install
 Verify the deployment by navigating to your server address in your browser.
 
   ```sh
- localhost:3000
+ 127.0.0.1:3000
 ```
 
 ## Directory map
