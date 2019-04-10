@@ -80,4 +80,4 @@ $ npm install
     screenshot.png
 
 ### Screenshot
-  ![alt text](https://github.com/UrielLoredo/Ghibli-films/screenshot.png)
+  ![alt text](/screenshot.png)
