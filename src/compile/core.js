@@ -71,7 +71,7 @@ init = function() {
           var body, documentHeight, getId, headerH, html, isActive, item, len, movieList, targetElement, topPositon, windowHeight;
           isActive = this.classList.contains('current');
           movieList = document.getElementsByClassName('current');
-          item = 0;
+          item = 1;
           len = movieList.length;
           while (item < len) {
             movieList[item].classList.remove('current');
@@ -114,9 +114,9 @@ init = function() {
   };
   request.send();
   searchBoxResults = document.getElementById('SearchBoxResults');
-  new autoComplete({
+  return new autoComplete({
     selector: 'input[name="searchfield"]',
-    offsetLeft: '0',
+    offsetLeft: '-50%',
     offsetTop: '5.25rem',
     minChars: 1,
     renderItem: function(item, search) {
@@ -157,9 +157,6 @@ init = function() {
         }
       }), 800);
     }
-  });
-  window.addEventListener('resize', function() {
-    setSize();
   });
 };
 

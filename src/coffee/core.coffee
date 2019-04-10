@@ -73,7 +73,7 @@ init = ->
         movieWrap.addEventListener 'click', ->
           isActive = @classList.contains('current')
           movieList = document.getElementsByClassName('current')
-          item = 0
+          item = 1
           len = movieList.length
           while item < len
             movieList[item].classList.remove 'current'
@@ -111,11 +111,13 @@ init = ->
     return
 
   request.send()
+
   searchBoxResults = document.getElementById('SearchBoxResults')
+
   # Init Auto Complete JS lib
   new autoComplete(
     selector: 'input[name="searchfield"]'
-    offsetLeft: '0'
+    offsetLeft: '-50%'
     offsetTop: '5.25rem'
     minChars: 1
     renderItem: (item, search) ->
@@ -149,11 +151,6 @@ init = ->
       ), 800
       return
 )
-  # Listener functions on resize
-  window.addEventListener 'resize', ->
-    setSize()
-    return
-  return
 
 do ->
   # Init code on document ready state

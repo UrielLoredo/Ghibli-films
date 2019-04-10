@@ -1,198 +1,200 @@
 ::-moz-selection
-	background: $Primary
+  background: $Primary
 ::selection
-	background: $Primary
+  background: $Primary
 html, body
-	position: relative
-	width: 100%
+  position: relative
+  width: 100%
 html
-	-webkit-font-smoothing: antialiased
-	font-size: $RootSize
-	font-weight: 400
-	text-rendering: optimizeLegibility
-	-webkit-text-size-adjust: 100%
-	-moz-text-size-adjust: 100%
-	-ms-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  font-size: $RootSize
+  font-weight: 400
+  text-rendering: optimizeLegibility
+  -webkit-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
 
 body
-	-webkit-overflow-scrolling: touch
-	background: $White
-	color: $White
-	display: block
-	font-family: $SansSerif
-	font-weight: 400
-	line-height: 1.45
-	margin: auto
-	padding: 0px
-	position: relative
-	overflow: hidden
-	width: 100%
-	&.loader-done
-		overflow: auto
+  -webkit-overflow-scrolling: touch
+  background: $White
+  color: $White
+  display: block
+  font-family: $SansSerif
+  font-weight: 400
+  line-height: 1.45
+  margin: auto
+  padding: 0px
+  position: relative
+  overflow: hidden
+  width: 100%
+  &.loader-done
+    overflow: auto
 
-h1,h2,h3,h4
-	color: $White
-	text-transform: uppercase
-
-p
-	margin-bottom: 1.25em
-
+// Type Scale 1.200 - Minor third
 h1, h2, h3, h4, h5
-	margin: 1.75rem 0 1rem
-	font-family: $SansSerif
-	font-weight: 600
-	line-height: 1.15
+  font-family: $SansSerif
+  font-weight: 600
+  line-height: 1.15
+  margin: 1.75rem 0 1rem
+  text-transform: uppercase
 
 h1
-	margin-top: 0
-	font-size: 2.488rem
+  margin-top: 0
+  font-size: 2.488rem
 
 h2
-	font-size: 2.074rem
+  font-size: 2.074rem
 
 h3
-	font-size: 1.728rem
+  font-size: 1.728rem
 
 h4
-	font-size: 1.44rem
+  font-size: 1.44rem
 
 h5
-	font-size: 1.2rem
-
+  font-size: 1.2rem
+p
+  margin-bottom: 1.25em
+a
+  +fx(color,0.25s)
+  color: $White
+  text-decoration: none
+  &:hover
+    color: $WhiteHover
 small, .text_small
-	font-size: 0.833em
+  font-size: 0.833em
 ul
-	li
-		font-size: 1rem
-		font-weight: 400
-		line-height: 1.625rem
+  li
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.625rem
 
 small
-	font-size: smaller
+  font-size: smaller
 
 pre
-	display: block
-	font-size: 1rem
-	font-weight: 400
-	line-height: 1.1875rem
-	margin-bottom: 1.25rem
-	white-space: pre-line
+  display: block
+  font-size: 1rem
+  font-weight: 400
+  line-height: 1.1875rem
+  margin-bottom: 1.25rem
+  white-space: pre-line
 
 strong
-	font-weight: bold
+  font-weight: bold
 
 sub, sup
-	font-size: 75%
-	line-height: 0
-	position: relative
-	vertical-align: baseline
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
 sup
-	top: -0.328125rem
+  top: -0.328125rem
 sub
-	bottom: -0.164062rem
+  bottom: -0.164062rem
 input, textarea
-	&::-webkit-input-placeholder
-		text-transform: uppercase
-	/* Firefox 18- */
-	&:-moz-placeholder
-		text-transform: uppercase
-	/* Firefox 19+ */
-	&::-moz-placeholder
-		text-transform: uppercase
-	&:-ms-input-placeholder
-		text-transform: uppercase
+  &::-webkit-input-placeholder
+    text-transform: uppercase
+  /* Firefox 18- */
+  &:-moz-placeholder
+    text-transform: uppercase
+  /* Firefox 19+ */
+  &::-moz-placeholder
+    text-transform: uppercase
+  &:-ms-input-placeholder
+    text-transform: uppercase
 input
-	+appearance
-	&:focus
-		outline-width: 0
+  +appearance
+  &:focus
+    outline-width: 0
 img
-	display: block
-	max-width: 100%
-	width: 100%
+  display: block
+  max-width: 100%
+  width: 100%
 .wrapper
-	background: $Black
-	margin: 0 auto
-	max-width: 480px
-	overflow: hidden
-	width: 100%
+  background: $Black
+  margin: 0 auto
+  max-width: $SmallDevice
+  overflow: hidden
+  width: 100%
 .header
-	max-width: 100%
-	width: 100%
+  max-width: 100%
+  width: 100%
 
 .main
-	margin: 2.625rem 0
-	max-width: 100%
-	position: relative
-	width: 100%
+  margin: 2.625rem 0
+  max-width: 100%
+  position: relative
+  width: 100%
 
 .section
-	position: relative
-	max-width: 2560px
-	width: 100%
+  position: relative
+  max-width: 2560px
+  width: 100%
 
 .footer
-	max-width: 100%
-	width: 100%
+  max-width: 100%
+  width: 100%
 
 .container
-	+bx
-	height: 100%
-	margin: 0 auto
-	//padding: 0 0.75rem
-	padding: 0
-	position: relative
-	width: 100%
-	max-width: 1024px
+  +bx
+  height: 100%
+  margin: 0 auto
+  //padding: 0 0.75rem
+  padding: 0
+  position: relative
+  width: 100%
+  max-width: 1024px
 .left,.alignleft
-	float: left
+  float: left
 .right,.alignright
-	float: right
+  float: right
 .center,.aligncenter
-	display: block
-	margin-left: auto
-	margin-right: auto
+  display: block
+  margin-left: auto
+  margin-right: auto
 .text-center
-	text-align: center
+  text-align: center
 .text-left
-	text-align: left
+  text-align: left
 .text-right
-	text-align: right
+  text-align: right
 .text-justify
-	text-align: justify
+  text-align: justify
 
 .button
-	+bx
-	+fx(all,0.5s)
-	border-radius: 50px
-	border: none
-	clear: both
-	color: $White
-	cursor: pointer
-	display: block
-	font-size: 0.875rem
-	font-weight: 700
-	margin: 1rem auto
-	max-width: 200px
-	min-width: 150px
-	padding: 15px 0px
-	text-align: center
-	text-decoration: none
-	
+  +bx
+  +fx(all,0.5s)
+  border-radius: 50px
+  border: none
+  clear: both
+  color: $White
+  cursor: pointer
+  display: block
+  font-size: 0.875rem
+  font-weight: 700
+  margin: 1rem auto
+  max-width: 200px
+  min-width: 150px
+  padding: 15px 0px
+  text-align: center
+  text-decoration: none
+  
 .input-field
-	input[type="submit" i]
-		&:focus
-			outline-width: 0
+  input[type="submit" i]
+    &:focus
+      outline-width: 0
 
 // Helpers
 .flex
-	+flex
-	+flexDir(row)
-	+flexWrap
+  +flex
+  +flexDir(row)
+  +flexWrap
 
 //Clearfix
 .cf
-	*zoom: 1
-	&:after
-		clear: both
-		content: ""
-		display: table
+  *zoom: 1
+  &:after
+    clear: both
+    content: ""
+    display: table

@@ -1,94 +1,100 @@
 .movie
+  +fx(all,0.4s)
+  border-radius: 8px
+  cursor: pointer
+  margin: 0 auto
+  position: relative
+  height: 33%
+  height: calc( 33vh - 1.3125rem)
+  max-width: 100%
+  width: 100%
+  &:hover
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.75)
+    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.75)
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.75)
+    z-index: 1
+  &.current
     +fx(all,0.25s)
-    border-radius: 8px
-    cursor: pointer
-    margin: 0 auto
+    height: 100%
+    height: calc( 100vh - 2.625rem )
+    z-index: 9
+    .movie--thumbnail
+      height: 100vh
+    .movie--desc
+      display: block
+  // Select the initial childrens ( "&:nth-of-type(1)" ), then start the iteration every 3 elements ("&:nth-child(n+4):nth-child(3n+1)")
+  &:nth-of-type(1), &:nth-child(n+4):nth-child(3n+0)
+    .movie--thumbnail
+      &::before
+        background: rgb(16,137,158)
+        background: -moz-linear-gradient(45deg, rgba(16,137,158,0.85) 0%, rgba(27,206,226,0.85) 100%)
+        background: -webkit-linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
+        background: linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10899e', endColorstr='#1bcee2',GradientType=1 )
+    .movie--desc-tag
+      background: rgb(16,137,158)
+      background: -moz-linear-gradient(45deg, rgba(16,137,158,0.85) 0%, rgba(27,206,226,0.85) 100%)
+      background: -webkit-linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
+      background: linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10899e', endColorstr='#1bcee2',GradientType=1 )
+  &:nth-of-type(2), &:nth-of-type(n+5):nth-of-type(3n+0)
+    .movie--thumbnail
+      &::before
+        background: -moz-linear-gradient(45deg, rgba(255,95,143,0.85) 0%, rgba(232,146,91,0.85) 100%)
+        background: -webkit-linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
+        background: linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ff5f8f', endColorstr='#d9e8925b',GradientType=1 )
+    .movie--desc-tag
+      background: -moz-linear-gradient(45deg, rgba(255,95,143,0.85) 0%, rgba(232,146,91,0.85) 100%)
+      background: -webkit-linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
+      background: linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ff5f8f', endColorstr='#d9e8925b',GradientType=1 )
+  &:nth-of-type(3), &:nth-child(n+6):nth-child(3n+0)
+    .movie--thumbnail
+      &::before
+        background: -moz-linear-gradient(45deg, rgba(103,149,189,0.85) 0%, rgba(103,148,189,0.85) 1%, rgba(108,88,212,0.85) 100%)
+        background: -webkit-linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
+        background: linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#806795bd', endColorstr='#806c58d4',GradientType=1 )
+    .movie--desc-tag
+      background: -moz-linear-gradient(45deg, rgba(103,149,189,0.85) 0%, rgba(103,148,189,0.85) 1%, rgba(108,88,212,0.85) 100%)
+      background: -webkit-linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
+      background: linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#806795bd', endColorstr='#806c58d4',GradientType=1 )
+  &--content
+    +center(vh)
+    width: 90%
+    z-index: 9
+  &--desc
+    display: none
+    &-tag
+      display: inline-block
+      padding: 0.25rem 1rem
+      font-size: 1rem
+      border-radius: 1rem
+      text-align: center
+  &--thumbnail
+    height: 100%
+    overflow: hidden
+    padding: 0
     position: relative
-    height: 33%
-    height: calc( 33vh - 1.3125rem)
-    max-width: 100%
     width: 100%
-    &.current
-        +fx(all,0.25s)
-        height: 100%
-        height: calc( 100vh - 2.625rem )
-        z-index: 9
-        .movie--thumbnail
-            height: 100vh
-        .movie--desc
-            display: block
-    &:nth-child(1n+1)
-        .movie--thumbnail
-            &::before
-                background: rgb(16,137,158)
-                background: -moz-linear-gradient(45deg, rgba(16,137,158,0.85) 0%, rgba(27,206,226,0.85) 100%)
-                background: -webkit-linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
-                background: linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10899e', endColorstr='#1bcee2',GradientType=1 )
-        .movie--desc-tag
-            background: rgb(16,137,158)
-            background: -moz-linear-gradient(45deg, rgba(16,137,158,0.85) 0%, rgba(27,206,226,0.85) 100%)
-            background: -webkit-linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
-            background: linear-gradient(45deg, rgba(16,137,158,0.85) 0%,rgba(27,206,226,0.85) 100%)
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10899e', endColorstr='#1bcee2',GradientType=1 )
-    &:nth-child(2n+2)
-        .movie--thumbnail
-            &::before
-                background: -moz-linear-gradient(45deg, rgba(255,95,143,0.85) 0%, rgba(232,146,91,0.85) 100%)
-                background: -webkit-linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
-                background: linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ff5f8f', endColorstr='#d9e8925b',GradientType=1 )
-        .movie--desc-tag
-            background: -moz-linear-gradient(45deg, rgba(255,95,143,0.85) 0%, rgba(232,146,91,0.85) 100%)
-            background: -webkit-linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
-            background: linear-gradient(45deg, rgba(255,95,143,0.85) 0%,rgba(232,146,91,0.85) 100%)
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ff5f8f', endColorstr='#d9e8925b',GradientType=1 )
-    &:nth-child(3n+3)
-        .movie--thumbnail
-            &::before
-                background: -moz-linear-gradient(45deg, rgba(103,149,189,0.85) 0%, rgba(103,148,189,0.85) 1%, rgba(108,88,212,0.85) 100%)
-                background: -webkit-linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
-                background: linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#806795bd', endColorstr='#806c58d4',GradientType=1 )
-        .movie--desc-tag
-            background: -moz-linear-gradient(45deg, rgba(103,149,189,0.85) 0%, rgba(103,148,189,0.85) 1%, rgba(108,88,212,0.85) 100%)
-            background: -webkit-linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
-            background: linear-gradient(45deg, rgba(103,149,189,0.85) 0%,rgba(103,148,189,0.85) 1%,rgba(108,88,212,0.85) 100%)
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#806795bd', endColorstr='#806c58d4',GradientType=1 )
-    &--content
-        +center(vh)
-        width: 90%
-        z-index: 9
-    &--desc
-        display: none
-        &-tag
-            display: inline-block
-            padding: 0.25rem 1rem
-            font-size: 1rem
-            border-radius: 1rem
-            text-align: center
-    &--thumbnail
-        height: 100%
-        overflow: hidden
-        padding: 0
-        position: relative
-        width: 100%
-        &::before
-            content: ''
-            display: block
-            height: 100%
-            left: 0
-            margin: 0 auto
-            //mix-blend-mode: multiply
-            position: absolute
-            top: 0
-            width: 100%
-        img
-            height: 100%
-            object-fit: cover
-            width: 100%
-    &--figure
-        height: 100%
-        overflow: hidden
-        position: relative
-        width: 100%
+    &::before
+      content: ''
+      display: block
+      height: 100%
+      left: 0
+      margin: 0 auto
+      //mix-blend-mode: multiply
+      position: absolute
+      top: 0
+      width: 100%
+    img
+      height: 100%
+      object-fit: cover
+      width: 100%
+  &--figure
+    height: 100%
+    overflow: hidden
+    position: relative
+    width: 100%
