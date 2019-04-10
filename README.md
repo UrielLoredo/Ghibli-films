@@ -90,5 +90,5 @@ Verify the deployment by navigating to your server address in your browser.
     screenshot.png
 
 ### Screenshot
-  ![alt text](https://raw.githubusercontent.com/UrielLoredo/Ghibli-films/master/screenshot.PNG)
+  ![alt text](https://raw.githubusercontent.com/UrielLoredo/Ghibli-films/master/screenshot.jpg)
   ![alt text](https://raw.githubusercontent.com/UrielLoredo/Ghibli-films/master/screenshot-detail.jpg)
