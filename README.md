@@ -96,9 +96,9 @@ Verify the deployment by navigating to your server address in your browser.
 
 ### Compiled task
 The compilation process starts in the "src" directory, compiles in the "compile" directory, concatenating external libraries located in the "libs" directory and minifying final files in the directory "dist"
-  - coffeescript -> JavaScript
-  - pug -> html
-  - sass -> css
+  - CoffeeScript -> JavaScript
+  - Pug -> HTML5
+  - Sass -> CSS
 
 ### Screenshot
   ![alt text](https://raw.githubusercontent.com/UrielLoredo/Ghibli-films/master/screenshot.jpg)
