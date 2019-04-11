@@ -30,11 +30,12 @@ init = function() {
   moviesContainer = document.getElementById('MoviesList');
   dbTitles = [];
   cleanCurrentClass = function() {
-    var item, j, len, movieList, ref;
-    movieList = document.getElementsByClassName('current');
-    len = movieList.length;
-    for (item = j = 0, ref = len; 0 <= ref ? j < ref : j > ref; item = 0 <= ref ? ++j : --j) {
-      movieList[item].classList.remove('current');
+    var j, len, movie, movieList;
+    movieList = document.querySelectorAll('.current');
+    movie = 0;
+    for (j = 0, len = movieList.length; j < len; j++) {
+      movie = movieList[j];
+      movie.classList.remove('current');
     }
   };
   request = new XMLHttpRequest;
@@ -78,7 +79,6 @@ init = function() {
         movieWrap.addEventListener('click', function() {
           var body, documentHeight, getId, headerH, html, isActive, targetElement, topPositon, windowHeight;
           isActive = this.classList.contains('current');
-          cleanCurrentClass();
           if (!isActive) {
             headerH = document.getElementsByClassName('header')[0].clientHeight;
             getId = this.getAttribute('id');
@@ -90,22 +90,27 @@ init = function() {
             windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
             if (documentHeight - topPositon < windowHeight) {
               Velocity(targetElement, 'scroll', {
-                duration: 250,
+                duration: 0,
                 offset: headerH * -1,
                 begin: function(elements) {
+                  cleanCurrentClass();
                   elements[0].classList.add('current');
                 }
               });
             } else {
               Velocity(targetElement, 'scroll', {
-                duration: 250,
+                duration: 0,
                 offset: headerH * -1,
+                begin: function(elements) {
+                  cleanCurrentClass();
+                },
                 complete: function(elements) {
                   elements[0].classList.add('current');
                 }
               });
             }
           } else {
+            cleanCurrentClass();
             this.classList.remove('current');
           }
         });
@@ -142,23 +147,47 @@ init = function() {
       suggest(matches);
     },
     onSelect: function(event, term, item) {
-      var goToMovie, headerH;
-      headerH = document.getElementsByClassName('header')[0].clientHeight;
+      var body, documentHeight, goToMovie, headerH, html, isActive, topPositon, windowHeight;
       goToMovie = document.getElementById(term.replace(/[^A-Z0-9]+/ig, ''));
-      cleanCurrentClass();
-      Velocity(goToMovie, 'scroll', {
-        duration: 400,
-        offset: headerH * -1
-      });
-      setTimeout((function() {
-        var isActive;
-        isActive = goToMovie.classList.contains('current');
-        if (!isActive) {
-          goToMovie.classList.add('current');
+      isActive = goToMovie.classList.contains('current');
+      if (!isActive) {
+        headerH = document.getElementsByClassName('header')[0].clientHeight;
+        body = document.body;
+        html = document.documentElement;
+        topPositon = goToMovie.offsetTop;
+        documentHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        if (documentHeight - topPositon < windowHeight) {
+          Velocity(goToMovie, 'scroll', {
+            duration: 0,
+            offset: headerH * -1,
+            begin: function(elements) {
+              cleanCurrentClass();
+              elements[0].classList.add('current');
+            }
+          });
         } else {
-          goToMovie.classList.remove('current');
+          Velocity(goToMovie, 'scroll', {
+            duration: 0,
+            offset: headerH * -1,
+            begin: function(elements) {
+              cleanCurrentClass();
+            },
+            complete: function(elements) {
+              goToMovie.classList.add('current');
+            }
+          });
         }
-      }), 800);
+      } else {
+        cleanCurrentClass();
+        Velocity(goToMovie, 'scroll', {
+          duration: 0,
+          offset: headerH * -1,
+          complete: function(elements) {
+            goToMovie.classList.add('current');
+          }
+        });
+      }
     }
   });
 };

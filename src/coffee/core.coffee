@@ -28,10 +28,10 @@ init = ->
   dbTitles = []
 
   cleanCurrentClass = ->
-    movieList = document.getElementsByClassName('current')
-    len = movieList.length
-    for item in [0...len]
-      movieList[item].classList.remove 'current'
+    movieList = document.querySelectorAll('.current')
+    movie = 0
+    for movie in movieList
+      movie.classList.remove 'current'
     return
 
   #Ghibli Api request
@@ -80,7 +80,6 @@ init = ->
         # Init animation on click
         movieWrap.addEventListener 'click', ->
           isActive = @classList.contains('current')
-          cleanCurrentClass()
           if !isActive
             headerH = document.getElementsByClassName('header')[0].clientHeight
             getId = @getAttribute('id')
@@ -90,22 +89,28 @@ init = ->
             topPositon = targetElement.offsetTop
             documentHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
             windowHeight = window.innerHeight or document.documentElement.clientHeight or document.body.clientHeight
+
             # Fix scroll top for last items
             if documentHeight - topPositon < windowHeight
               Velocity targetElement, 'scroll',
-                duration: 250
+                duration: 0
                 offset: headerH * -1
                 begin: (elements) ->
+                  cleanCurrentClass()
                   elements[0].classList.add 'current'
                   return
             else
               Velocity targetElement, 'scroll',
-                duration: 250
+                duration: 0
                 offset: headerH * -1
+                begin: (elements) ->
+                  cleanCurrentClass()
+                  return
                 complete: (elements) ->
                   elements[0].classList.add 'current'
                   return
           else
+            cleanCurrentClass()
             @classList.remove 'current'
           return
         return
@@ -139,20 +144,44 @@ init = ->
       suggest matches
       return
     onSelect: (event, term, item) ->
-      headerH = document.getElementsByClassName('header')[0].clientHeight
       goToMovie = document.getElementById(term.replace(/[^A-Z0-9]+/ig, ''))
-      cleanCurrentClass()
-      Velocity goToMovie, 'scroll',
-        duration: 400
-        offset: headerH * -1
-      setTimeout (->
-        isActive = goToMovie.classList.contains('current')
-        if !isActive
-          goToMovie.classList.add 'current'
+      isActive = goToMovie.classList.contains('current')
+
+      if !isActive
+        # Fix scroll top for last items
+        headerH = document.getElementsByClassName('header')[0].clientHeight
+        body = document.body
+        html = document.documentElement
+        topPositon = goToMovie.offsetTop
+        documentHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
+        windowHeight = window.innerHeight or document.documentElement.clientHeight or document.body.clientHeight
+
+        if documentHeight - topPositon < windowHeight
+          Velocity goToMovie, 'scroll',
+            duration: 0
+            offset: headerH * -1
+            begin: (elements) ->
+              cleanCurrentClass()
+              elements[0].classList.add 'current'
+              return
         else
-          goToMovie.classList.remove 'current'
-        return
-      ), 800
+          Velocity goToMovie, 'scroll',
+            duration: 0
+            offset: headerH * -1
+            begin: (elements) ->
+              cleanCurrentClass()
+              return
+            complete: (elements) ->
+              goToMovie.classList.add 'current'
+              return
+      else
+        cleanCurrentClass()
+        Velocity goToMovie, 'scroll',
+          duration: 0
+          offset: headerH * -1
+          complete: (elements) ->
+            goToMovie.classList.add 'current'
+            return
       return
 )
 
